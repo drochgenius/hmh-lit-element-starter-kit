@@ -3,76 +3,19 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/demo/index.css">
-    <link rel="stylesheet" href="/node_modules/@material/button/dist/mdc.button.css">
-    <script type="module" src="/components/text-input.js"></script>
+    <script type="module" src="/components/my-component.js"></script>
     <style>
 
     </style>
 </head>
 
 <body>
-    <h3>Complete the following proverb</h3>
-    <p>What you don't get with a nice
-        <text-input>
+    <h3>Default</h3>
+    <my-component></my-component>
 
-            <response-validation slot="feedback" expected="smile" score="4" strategy="fuzzyMatch">
-                <span>Good job <b>boy</b>!</span>
-            </response-validation>
+    <h3>With name</h3>
 
-            <response-validation slot="feedback" expected="grin" score="1" feedback-type="neutral" strategy="exactMatch">
-                <span>Almost</span>
-            </response-validation>
-
-            <response-validation slot="feedback" score="0" feedback-type="negative" strategy="exactMatch">
-                <span>Try again</span>
-                <span>Oups, still not good</span>
-                <span>Too bad!</span>
-            </response-validation>
-
-        </text-input>
-        , you won't get with a grim one.
-    </p>
-
-    <h3>Mariana's Trench</h3>
-
-    <p class="mariana">
-        Location of the Mariana Trench
-        The Mariana Trench or Marianas Trench[1] is located in the western <text-input>
-            <response-validation slot="feedback" expected="Pacific Ocean" score="4">
-            </response-validation>
-            <response-validation slot="feedback" expected="Pacific Ocean" score="1" strategy="fuzzyMatch" feedback-type="neutral">
-            </response-validation>
-        </text-input> approximately 200 kilometres
-        (124 mi) east of the Mariana Islands, and has the <text-input>
-            <response-validation slot="feedback" expected="deepest" score="4">
-            </response-validation>
-        </text-input> natural point in the world. It is a crescent-shaped
-        trough in the <text-input>
-            <response-validation slot="feedback" expected="Earth" score="4">
-            </response-validation>
-            <response-validation slot="feedback" expected="Earth" score="1" strategy="fuzzyMatch" feedback-type="neutral">
-            </response-validation>
-        </text-input>'s crust averaging about 2,550 km (1,580 mi) long and 69 km (43 mi) wide. The maximum known
-        depth is 10,994 metres (36,070 ft) (± 40 metres [130 ft]) at the <text-input>
-            <response-validation slot="feedback" expected="southern" score="4">
-            </response-validation>
-        </text-input> end of a small slot-shaped valley in
-        its floor known as the Challenger Deep.[2] However, some unrepeated measurements place the deepest portion at
-        11,034 metres (36,201 ft).[3] For comparison: if Mount <text-input>
-            <response-validation slot="feedback" expected="Everest" score="4">
-            </response-validation>
-            <response-validation slot="feedback" expected="Everest" score="1" strategy="fuzzyMatch" feedback-type="neutral">
-            </response-validation>
-        </text-input> were dropped into the trench at this point, its
-        peak would still be over 2 kilometres (1.2 mi) under water.[a]</p>
-
-    <button id="button" class="mdc-button">Validate</button>
-
-    <script>
-        document.getElementById('button').addEventListener('click', () => {
-            document.querySelectorAll('text-input').forEach(el => el.showFeedback());
-        })
-    </script>
+    <my-component name="Mike"></my-component>
 </body>
 
 

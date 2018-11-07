@@ -6,7 +6,7 @@ import { ComponentBase, html, property, TemplateResult } from '@hmh/component-ba
  */
 export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
-    public name: string;
+    public name: string = 'World';
 
     protected render(): TemplateResult {
         const { name } = this;
