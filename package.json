@@ -24,12 +24,12 @@
     "devDependencies": {
         "@hmh/lit-element-tester": "latest",
         "@hmh/nodejs-base-server": "latest",
-        "@polymer/iron-component-page": "^3.0.0-pre.20",
+        "@polymer/iron-component-page": "latest",
         "@polymer/iron-demo-helpers": "latest",
-        "@types/chai": "^4.1.7",
-        "@types/mocha": "^5.2.5",
-        "concurrently": "^4.0.1",
-        "npm-watch": "^0.4.0",
+        "@types/chai": "latest",
+        "@types/mocha": "latest",
+        "concurrently": "latest",
+        "npm-watch": "latest",
         "polymer-cli": "latest",
         "typescript": "latest",
         "typescript-styled-plugin": "latest"
