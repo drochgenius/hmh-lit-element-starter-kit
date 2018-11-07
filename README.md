@@ -1,2 +1,3 @@
-# lit-element-starter-kit
-Starter repository for polymer/lit-element
+# HMH Lit-Element Starter Kit
+
+Starter repository for building Polymer/lit-element-based web components. 
