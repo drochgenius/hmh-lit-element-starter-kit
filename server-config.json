@@ -1,0 +1,21 @@
+{
+    "activeMode": "dev",
+    "dev": {
+        "NodeServer": {
+            "applicationFileFolder": "./dist",
+            "cacheControlStrategy": {
+                "static": "no-cache, private",
+                "api": "no-cache, private"
+            },
+            "defaultClientContentPath": "index.html",
+            "importMap": "./dist/import-map.json",
+            "port": 3000,
+            "staticContentMaxAge": 0,
+            "staticFolderMapping": {
+                "/demo": "./demo",
+                "/css": "./dist/css",
+                "/images": "./demo/images"
+            }
+        }
+    }
+}

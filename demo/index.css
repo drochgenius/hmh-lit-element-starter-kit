@@ -1,0 +1,31 @@
+:root {
+    --font-family: Roboto, sans-serif;
+    --font-size: 18px;
+    --negative-color: #D90719;
+    --neutral-color: #D4AB27;
+    --positive-color: #46AB3B;
+}
+
+* {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+p {
+    line-height: 1.5em;
+}
+
+text-input {
+    --input-color: inherit;
+    --input-background: inherit;
+    --input-width: auto;
+    display: inline-block;
+}
+
+.mariana text-input {
+    --input-width: 150px;
+}
+
+[slot] {
+    display: none;
+}

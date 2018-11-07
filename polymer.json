@@ -1,0 +1,7 @@
+{
+    "npm": true,
+    "entrypoint": "demo/index.html",
+    "lint": {
+        "rules": ["polymer-3"]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "@hmh/my-component",
+    "version": "0.0.1",
+    "description": "My Component",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "clean": "rm -rf package-lock.json node_modules/ dist/",
+        "start": "nodejs-base-server -Msc server-config.json",
+        "map": "nodejs-base-server -Mc server-config.json",
+        "build": "tsc -p src",
+        "prepubishOnly": "npm run build; npm run sass",
+        "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
+        "test": "lit-element-tester dist/components/*.js",
+        "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
+    },
+    "keywords": [],
+    "author": "Dominique Rochefort <dominique.rochefort@hmhco.com>",
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+        "@hmh/component-base": "latest"
+    },
+    "devDependencies": {
+        "@hmh/lit-element-tester": "latest",
+        "@hmh/nodejs-base-server": "latest",
+        "@polymer/iron-component-page": "^3.0.0-pre.20",
+        "@polymer/iron-demo-helpers": "latest",
+        "@types/chai": "^4.1.7",
+        "@types/mocha": "^5.2.5",
+        "concurrently": "^4.0.1",
+        "npm-watch": "^0.4.0",
+        "polymer-cli": "latest",
+        "typescript": "latest",
+        "typescript-styled-plugin": "latest"
+    },
+    "watch": {
+        "_generateDocs": "src/**/*"
+    }
+}

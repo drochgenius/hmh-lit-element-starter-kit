@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- encoding must be set for mocha's special characters to render properly -->
+        <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+        <link rel="stylesheet" href="runner.css" />
+
+        <script src="../node_modules/@hmh/lit-element-tester/dist/browser/util.js"></script>
+        <script src="../node_modules/source-map-support/browser-source-map-support.js"></script>
+        <script src="../node_modules/mocha/mocha.js"></script>
+        <script src="../node_modules/chai/chai.js"></script>
+        <script>
+            /* global mocha, sourceMapSupport */
+            sourceMapSupport.install();
+            mocha.setup('bdd');
+        </script>
+        <script type="module" src="../dist/components/my-component.js"></script>
+    </head>
+
+    <body>
+        <!-- test fixtures -->
+        <template id="default">
+            <my-component></my-component>
+        </template>
+
+        <template id="with-name">
+            <my-component name="John"></my-component>
+        </template>
+
+        <div id="mocha"><!-- test results are displayed here --></div>
+
+        <div id="stage"><!-- elements under tests are displayed here --></div>
+
+        <script type="module" src="../dist/unit/my-component.spec.js"></script>
+    </body>
+</html>
