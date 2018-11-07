@@ -10,7 +10,7 @@
         "start": "nodejs-base-server -Msc server-config.json",
         "map": "nodejs-base-server -Mc server-config.json",
         "build": "tsc -p src",
-        "prepubishOnly": "npm run build; npm run sass",
+        "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test": "lit-element-tester dist/components/*.js",
         "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
