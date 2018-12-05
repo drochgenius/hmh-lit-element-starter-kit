@@ -12,7 +12,8 @@
         "build": "tsc -p src",
         "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
-        "test": "lit-element-tester dist/components/*.js",
+        "test-help": "lit-element-tester -V",
+        "test": "lit-element-tester server-config.json",
         "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
     },
     "keywords": [],

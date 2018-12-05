@@ -13,9 +13,13 @@
             "staticContentMaxAge": 0,
             "staticFolderMapping": {
                 "/demo": "./demo",
-                "/css": "./dist/css",
-                "/images": "./demo/images"
+                "/css": "./dist/css"
             }
+        },
+        "LitElementTester": {
+            "instrumentedFiles": ["dist/components/*.js"],
+            "testClientContentPath": "test/runner.html",
+            "disableLogging": false
         }
     }
 }

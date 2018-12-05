@@ -1,4 +1,6 @@
+import { withSnippet} from '@hmh/lit-element-tester';
 import { MyComponent } from '../components/my-component';
+
 const expect: Chai.ExpectStatic = chai.expect;
 
 describe(`<my-component>`, (): void => {
