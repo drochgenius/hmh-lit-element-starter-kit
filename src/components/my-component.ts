@@ -1,4 +1,4 @@
-import { ComponentBase, html, property, TemplateResult } from '@hmh/component-base';
+import { ComponentBase, html, property, TemplateResult, until } from '@hmh/component-base';
 
 /**
  * `<my-component>`
@@ -8,11 +8,25 @@ export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
     public name: string = 'World';
 
+    private get styles() {
+        return `p { color: blue; }`;
+    }
+
     protected render(): TemplateResult {
-        const { name } = this;
+        const { name, styles } = this;
         return html`
-            <h3>Hello ${name}!</h3>
+            <style>
+                ${styles}
+            </style>
+            <h3>Hello ${name}, here's the quote of the day:</h3>
+            <p>${until(this.quote(), 'loading...')}</p>
         `;
+    }
+
+    private async quote(): Promise<string> {
+        const response: Response = await fetch('http://quotes.rest/qod.json');
+        const data = await response.json();
+        return data;
     }
 }
 
