@@ -9,7 +9,7 @@ export class MyComponent extends ComponentBase<string> {
     public name: string = 'World';
 
     private get styles() {
-        return `p { color: blue; }`;
+        return `p { color: red; }`;
     }
 
     protected render(): TemplateResult {
@@ -26,7 +26,7 @@ export class MyComponent extends ComponentBase<string> {
     private async quote(): Promise<string> {
         const response: Response = await fetch('http://quotes.rest/qod.json');
         const data = await response.json();
-        return data;
+        return data.contents.quotes[0].quote;
     }
 }
 
