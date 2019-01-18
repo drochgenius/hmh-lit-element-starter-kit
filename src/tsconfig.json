@@ -25,13 +25,7 @@
             "@material/*": ["node_modules/@material/*"],
             "@polymer/*": ["node_modules/@hmh/component-base/node_modules/@polymer/*"],
             "lit-html/*": ["node_modules/@hmh/component-base/node_modules/lit-html/*"]
-        },
-        "plugins": [
-            {
-                "name": "typescript-styled-plugin",
-                "validate": false
-            }
-        ]
+        }
     },
     "include": ["../src/**/*.ts", "../typings.d.ts"],
     "exclude": ["node_modules"]

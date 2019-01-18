@@ -32,8 +32,7 @@
         "concurrently": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
-        "typescript": "latest",
-        "typescript-styled-plugin": "latest"
+        "typescript": "latest"
     },
     "watch": {
         "_generateDocs": "src/**/*"
