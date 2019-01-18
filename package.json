@@ -23,7 +23,7 @@
         "@hmh/component-base": "latest"
     },
     "devDependencies": {
-        "@hmh/lit-element-tester": "latest",
+        "@hmh/lit-element-tester": "dev",
         "@hmh/nodejs-base-server": "latest",
         "@polymer/iron-component-page": "latest",
         "@polymer/iron-demo-helpers": "latest",
@@ -32,8 +32,7 @@
         "concurrently": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
-        "typescript": "latest",
-        "typescript-styled-plugin": "latest"
+        "typescript": "latest"
     },
     "watch": {
         "_generateDocs": "src/**/*"
