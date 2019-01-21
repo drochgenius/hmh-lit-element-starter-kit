@@ -14,13 +14,15 @@
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test-help": "lit-element-tester -V",
         "test": "lit-element-tester server-config.json",
-        "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
+        "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json",
+        "proxy": "lcp --proxyUrl https://www.metaweather.com"
     },
     "keywords": [],
     "author": "Dominique Rochefort <dominique.rochefort@hmhco.com>",
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@hmh/component-base": "latest"
+        "@hmh/component-base": "latest",
+        "@material/card": "^0.43.0"
     },
     "devDependencies": {
         "@hmh/lit-element-tester": "dev",
@@ -30,6 +32,7 @@
         "@types/chai": "latest",
         "@types/mocha": "latest",
         "concurrently": "latest",
+        "local-cors-proxy": "^1.0.2",
         "npm-watch": "latest",
         "polymer-cli": "latest",
         "typescript": "latest"
