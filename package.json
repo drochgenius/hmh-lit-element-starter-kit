@@ -13,7 +13,7 @@
         "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test-help": "lit-element-tester -V",
-        "test": "lit-element-tester server-config.json",
+        "test": "lit-element-tester server-config.json -p 3030",
         "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json",
         "proxy": "lcp --proxyUrl https://www.metaweather.com"
     },
@@ -25,16 +25,18 @@
         "@material/card": "^0.43.0"
     },
     "devDependencies": {
-        "@hmh/lit-element-tester": "dev",
+        "@hmh/lit-element-tester": "^1.2.3",
         "@hmh/nodejs-base-server": "latest",
         "@polymer/iron-component-page": "latest",
         "@polymer/iron-demo-helpers": "latest",
         "@types/chai": "latest",
         "@types/mocha": "latest",
-        "concurrently": "latest",
+        "@types/sinon": "^7.0.4",
+        "concurrently": "^4.1.0",
         "local-cors-proxy": "^1.0.2",
         "npm-watch": "latest",
         "polymer-cli": "latest",
+        "sinon": "^7.2.3",
         "typescript": "latest"
     },
     "watch": {

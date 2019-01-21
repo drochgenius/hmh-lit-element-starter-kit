@@ -1,14 +1,14 @@
 # HMH Lit-Element Starter Kit
 
-Starter repository for building Polymer/lit-element-based web components. 
+Starter repository for building Polymer/lit-element-based web components.
 
 ## Technology Stack
 
-* Polymer [Lit-Element](https://github.com/Polymer/lit-element) as base class for building native custom elements.
-* [Lit-HTML](https://polymer.github.io/lit-html/) as templating library.
-* [Typescript](http://www.typescriptlang.org/).
-* Extensible [development server](https://github.com/hmhco/mtl-nodejs-base-server) with support for bare ECMAScript imports.
-* Custom mocha-based unit test framework with code coverage: [lit-element-tester](https://github.com/drochgenius/lit-element-tester).
+-   Polymer [Lit-Element](https://github.com/Polymer/lit-element) as base class for building native custom elements.
+-   [Lit-HTML](https://polymer.github.io/lit-html/) as templating library.
+-   [Typescript](http://www.typescriptlang.org/).
+-   Extensible [development server](https://github.com/hmhco/mtl-nodejs-base-server) with support for bare ECMAScript imports.
+-   Custom mocha-based unit test framework with code coverage: [lit-element-tester](https://github.com/drochgenius/lit-element-tester).
 
 ## Getting started
 
@@ -20,21 +20,29 @@ Starter repository for building Polymer/lit-element-based web components.
 npm install
 ```
 
-3. Run the watch script (should be continuously running in the background)
+3. Launch the remote API proxy server
+
+This is required because some of the remote APIs do not support CORS.
+
+```
+npm run proxy
+```
+
+4. Run the watch script (should be continuously running in the background)
 
 ```
 npm run watch
 ```
 
-4. In another terminal window, run the development server
+5. In another terminal window, run the development server
 
 ```
 npm start
 ```
 
-5. Open your browser at the given location to view your component documentation and demo pages.
+6. Open your browser at the given location to view your component documentation and demo pages.
 
-6. You can also execute the unit test suite
+7. You can also execute the unit test suite
 
 ```
 npm test

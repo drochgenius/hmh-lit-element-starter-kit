@@ -15,11 +15,11 @@
             sourceMapSupport.install();
             mocha.setup('bdd');
         </script>
-            <!-- add your components under test here -->
-            <script type="module" src="/components/my-component.js"></script>
-            <!-- add you test files here -->
-            <script type="module" src="/unit/my-component.spec.js"></script>
-        <head>
+        <!-- add your components under test here -->
+        <script type="module" src="/components/my-component.js"></script>
+        <script type="module" src="/components/weather-report.js"></script>
+        <!-- add you test files here -->
+        <script type="module" src="/unit/index.spec.js"></script>
     </head>
 
     <body>
@@ -30,6 +30,10 @@
 
         <template id="with-name">
             <my-component name="John"></my-component>
+        </template>
+
+        <template id="weather1">
+            <weather-report location="Chicago"> </weather-report>
         </template>
 
         <div id="mocha"><!-- test results are displayed here --></div>
