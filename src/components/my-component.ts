@@ -8,16 +8,20 @@ export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
     public name: string = 'World';
 
-    private get styles() {
-        return `p { color: blue; }`;
+    private get styles(): TemplateResult {
+        return html`
+            <style>
+                p {
+                    color: blue;
+                }
+            </style>
+        `;
     }
 
     protected render(): TemplateResult {
         const { name, styles } = this;
         return html`
-            <style>
-                ${styles}
-            </style>
+            ${styles}
             <h3>Hello ${name}, here's the quote of the day:</h3>
             <p>${until(this.quote(), 'loading...')}</p>
         `;
