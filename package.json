@@ -23,15 +23,17 @@
         "@hmh/component-base": "latest"
     },
     "devDependencies": {
-        "@hmh/lit-element-tester": "dev",
+        "@hmh/lit-element-tester": "latest",
         "@hmh/nodejs-base-server": "latest",
         "@polymer/iron-component-page": "latest",
         "@polymer/iron-demo-helpers": "latest",
         "@types/chai": "latest",
         "@types/mocha": "latest",
+        "@types/sinon": "^7.0.4",
         "concurrently": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
+        "sinon": "^7.2.3",
         "typescript": "latest",
         "typescript-styled-plugin": "latest"
     },
