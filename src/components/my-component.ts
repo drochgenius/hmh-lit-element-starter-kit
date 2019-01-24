@@ -23,13 +23,13 @@ export class MyComponent extends ComponentBase<string> {
         return html`
             ${styles}
             <h3>Hello ${name}, here's the quote of the day:</h3>
-            <p>${until(this.quote(), 'loading...')}</p>
+            <p class="quote">${until(this.quote(), 'loading...')}</p>
         `;
     }
 
     private async quote(): Promise<string> {
         const response: Response = await fetch('http://quotes.rest/qod.json');
-        const data = await response.json();
+        const data: string = await response.json();
         return data;
     }
 }
