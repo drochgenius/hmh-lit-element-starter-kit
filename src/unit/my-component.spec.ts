@@ -43,7 +43,7 @@ describe(`<my-component>`, (): void => {
 
         expect(el.shadowRoot).not.to.be.undefined;
         const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello John!');
+        expect(heading.innerText).to.equal('Hello John, here\'s the quote of the day:');
     });
 
     it('should update when name is changed', async (): Promise<void> => {
