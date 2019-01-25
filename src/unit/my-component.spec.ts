@@ -65,15 +65,6 @@ describe(`<my-component>`, (): void => {
 
         el.name = 'Jane';
         expect(heading.innerText).to.equal(`Hello ${el.name}, here\'s the quote of the day:`);
-
-        const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
-        expect(paragraph.innerText).to.deep.equal('loading...');
-        await new Promise((done: any) => {
-            setTimeout(() => {
-                expect(paragraph.innerText).to.deep.equal(fakeQuote);
-                done();
-            }, 0);
-        });
     });
 
     afterEach(() => {

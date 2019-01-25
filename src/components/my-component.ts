@@ -29,8 +29,12 @@ export class MyComponent extends ComponentBase<string> {
 
     private async quote(): Promise<string> {
         const response: Response = await fetch('http://quotes.rest/qod.json');
-        const data: string = await response.json();
-        return data;
+
+        if (response.status === 200) {
+            const data: string = await response.json();
+            return data;
+        }
+        return 'could not load the quote';
     }
 }
 
