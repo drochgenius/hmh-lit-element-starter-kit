@@ -34,6 +34,8 @@ npm start
 
 5. Open your browser at the given location to view your component documentation and demo pages.
 
+[DEMO PAGE](http://localhost:3000/demo/index.html)
+
 6. You can also execute the unit test suite
 
 ```

@@ -23,11 +23,10 @@ describe(`<my-component>`, (): void => {
 
         expect(el.shadowRoot).not.to.be.undefined;
         const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello World!');
+        expect(heading.innerText).to.equal("Hello World, here's the quote of the day:");
+
         const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
-
         expect(paragraph.innerText).to.deep.equal('loading...');
-
         await new Promise((done: any) => {
             setTimeout(() => {
                 expect(paragraph.innerText).to.deep.equal(fakeQuote);
@@ -43,7 +42,16 @@ describe(`<my-component>`, (): void => {
 
         expect(el.shadowRoot).not.to.be.undefined;
         const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello John!');
+        expect(heading.innerText).to.equal("Hello John, here's the quote of the day:");
+
+        const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
+        expect(paragraph.innerText).to.deep.equal('loading...');
+        await new Promise((done: any) => {
+            setTimeout(() => {
+                expect(paragraph.innerText).to.deep.equal(fakeQuote);
+                done();
+            }, 0);
+        });
     });
 
     it('should update when name is changed', async (): Promise<void> => {
@@ -53,11 +61,19 @@ describe(`<my-component>`, (): void => {
 
         expect(el.shadowRoot).not.to.be.undefined;
         const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello World!');
+        expect(heading.innerText).to.equal("Hello World, here's the quote of the day:");
 
         el.name = 'Jane';
-        await el.updateComplete;
-        expect(heading.innerText).to.equal('Hello Jane!');
+        expect(heading.innerText).to.equal(`Hello ${el.name}, here\'s the quote of the day:`);
+
+        const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
+        expect(paragraph.innerText).to.deep.equal('loading...');
+        await new Promise((done: any) => {
+            setTimeout(() => {
+                expect(paragraph.innerText).to.deep.equal(fakeQuote);
+                done();
+            }, 0);
+        });
     });
 
     afterEach(() => {
