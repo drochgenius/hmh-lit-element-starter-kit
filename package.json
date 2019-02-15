@@ -29,11 +29,11 @@
         "@polymer/iron-demo-helpers": "latest",
         "@types/chai": "latest",
         "@types/mocha": "latest",
-        "@types/sinon": "^7.0.4",
+        "@types/sinon": "latest",
         "concurrently": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
-        "sinon": "^7.2.3",
+        "sinon": "latest",
         "typescript": "latest",
         "typescript-styled-plugin": "latest"
     },

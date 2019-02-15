@@ -19,7 +19,7 @@
         "LitElementTester": {
             "instrumentedFiles": ["dist/components/*.js"],
             "testClientContentPath": "test/runner.html",
-            "disableLogging": false
+            "disableLogging": true
         }
     }
 }

@@ -1,4 +1,4 @@
-import { ComponentBase, html, property, TemplateResult, until } from '@hmh/component-base';
+import { ComponentBase, css, CSSResult, html, property, TemplateResult, until } from '@hmh/component-base';
 
 /**
  * `<my-component>`
@@ -8,20 +8,17 @@ export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
     public name: string = 'World';
 
-    private get styles(): TemplateResult {
-        return html`
-            <style>
-                p {
-                    color: blue;
-                }
-            </style>
+    static get styles(): CSSResult {
+        return css`
+            p {
+                color: blue;
+            }
         `;
     }
 
     protected render(): TemplateResult {
-        const { name, styles } = this;
+        const { name } = this;
         return html`
-            ${styles}
             <h3>Hello ${name}, here's the quote of the day:</h3>
             <p class="quote">${until(this.quote(), 'loading...')}</p>
         `;
