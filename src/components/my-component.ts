@@ -11,7 +11,7 @@ export class MyComponent extends ComponentBase<string> {
     static get styles(): CSSResult {
         return css`
             h3 {
-                color: orange;
+                color: red;
             }
             p {
                 color: blue;
@@ -31,7 +31,9 @@ export class MyComponent extends ComponentBase<string> {
         const response: Response = await fetch('http://quotes.rest/qod.json');
 
         if (response.status === 200) {
-            return response.json();
+            
+            const result:any=await response.json();
+            return result.contents.quotes[0].quote;
         }
 
         return 'could not load the quote';
