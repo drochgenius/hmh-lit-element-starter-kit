@@ -10,6 +10,9 @@ export class MyComponent extends ComponentBase<string> {
 
     static get styles(): CSSResult {
         return css`
+            h3 {
+                color: orange;
+            }
             p {
                 color: blue;
             }
