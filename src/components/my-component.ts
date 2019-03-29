@@ -31,7 +31,8 @@ export class MyComponent extends ComponentBase<string> {
         const response: Response = await fetch('http://quotes.rest/qod.json');
 
         if (response.status === 200) {
-            return response.json();
+
+            return response.text('quote');
         }
 
         return 'could not load the quote';

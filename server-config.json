@@ -13,7 +13,8 @@
             "staticContentMaxAge": 0,
             "staticFolderMapping": {
                 "/demo": "./demo",
-                "/css": "./dist/css"
+                "/css": "./dist/css",
+                "/src" : "/src"
             }
         },
         "LitElementTester": {
