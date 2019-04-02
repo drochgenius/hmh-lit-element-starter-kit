@@ -15,6 +15,8 @@ export class MyComponent extends ComponentBase<string> {
             }
             p {
                 color: blue;
+                border: 1px solid gray;
+                padding: 0.5em;
             }
         `;
     }
@@ -28,7 +30,7 @@ export class MyComponent extends ComponentBase<string> {
     }
 
     private async quote(): Promise<string> {
-        const response: Response = await fetch('http://quotes.rest/qod.json');
+        const response: Response = await fetch('http://qod.rest:3000/api/qod.json');
 
         if (response.status === 200) {
             return response.json();
