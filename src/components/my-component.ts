@@ -33,7 +33,8 @@ export class MyComponent extends ComponentBase<string> {
         const response: Response = await fetch('http://qod.rest:3000/api/qod.json');
 
         if (response.status === 200) {
-            return response.json();
+            const jsonresp: any = await response.json();
+            return jsonresp.contents.quotes[0].quote;
         }
 
         return 'could not load the quote';
