@@ -37,7 +37,6 @@ export class MyComponent extends ComponentBase<string> {
 
     private async quote(): Promise<string> {
         const headers: { [key: string]: string } = { 'Content-Type': 'application/json' };
-        
         const response: Response = await fetch('http://qod.rest:3000/api/qod.json', { headers });
 
         if (response.status === 200) {
