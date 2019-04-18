@@ -16,7 +16,7 @@ describe(`<my-component>`, (): void => {
         );
     });
 
-    it('should render default state', async (): Promise<void> => {
+    it.only('should render default state', async (): Promise<void> => {
         withSnippet('default');
         const el: MyComponent = document.querySelector('my-component');
         await el.updateComplete;
