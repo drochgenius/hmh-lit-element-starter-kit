@@ -13,7 +13,7 @@
         "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test-help": "lit-element-tester -V",
-        "test": "lit-element-tester server-config.json",
+        "test": "lit-element-tester -p 3001 server-config.json",
         "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
     },
     "keywords": [],
@@ -29,10 +29,13 @@
         "@polymer/iron-demo-helpers": "latest",
         "@types/chai": "latest",
         "@types/mocha": "latest",
+        "@types/sinon": "latest",
         "concurrently": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
-        "typescript": "latest"
+        "sinon": "latest",
+        "typescript": "latest",
+        "typescript-styled-plugin": "latest"
     },
     "watch": {
         "_generateDocs": "src/**/*"
