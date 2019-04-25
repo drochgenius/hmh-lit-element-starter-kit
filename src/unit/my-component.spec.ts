@@ -64,6 +64,7 @@ describe(`<my-component>`, (): void => {
         expect(heading.innerText).to.equal("Hello World, here's the quote of the day:");
 
         el.name = 'Jane';
+        await el.updateComplete;
         expect(heading.innerText).to.equal(`Hello ${el.name}, here\'s the quote of the day:`);
     });
 
