@@ -5,17 +5,34 @@
     <link rel="stylesheet" href="/demo/index.css">
     <script type="module" src="/components/my-component.js"></script>
     <style>
-
+        @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+        .flexer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .flexer > div {
+            flex: 0 1 auto;
+            
+        }
     </style>
 </head>
 
 <body>
-    <h3>Default</h3>
-    <my-component></my-component>
-
-    <h3>With name</h3>
-
-    <my-component name="Mike"></my-component>
+    <div class="flexer">
+        <div>
+            <h3>Default (no light DOM children)</h3>
+            <my-component></my-component>
+        </div>
+        <div>
+            <h3>Has stuff in light DOM</h3>
+            <my-component>
+                <p slot="name">Max</slot>
+                <p slot="title">Developer</slot>
+                <p slot="description">Dabbles in CSS, HTML, NodeJS, and consuming excessive amounts of sugar.</slot>
+            </my-component>
+        </div>
+    </div>
 </body>
 
 
