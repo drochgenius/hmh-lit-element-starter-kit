@@ -5,17 +5,20 @@
     <link rel="stylesheet" href="/demo/index.css">
     <script type="module" src="/components/my-component.js"></script>
     <style>
-
+        @import "https://fonts.googleapis.com/icon?family=Material+Icons";
     </style>
 </head>
 
 <body>
     <h3>Default</h3>
-    <my-component></my-component>
+    <!-- <my-component></my-component> -->
 
     <h3>With name</h3>
 
-    <my-component name="Mike"></my-component>
+    <my-component>
+        <p slot="name">Max</slot>
+        <p slot="title">Developer</slot>
+    </my-component>
 </body>
 
 
