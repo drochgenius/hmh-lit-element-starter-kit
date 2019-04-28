@@ -6,19 +6,33 @@
     <script type="module" src="/components/my-component.js"></script>
     <style>
         @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+        .flexer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .flexer > div {
+            flex: 0 1 auto;
+            
+        }
     </style>
 </head>
 
 <body>
-    <h3>Default</h3>
-    <!-- <my-component></my-component> -->
-
-    <h3>With name</h3>
-
-    <my-component>
-        <p slot="name">Max</slot>
-        <p slot="title">Developer</slot>
-    </my-component>
+    <div class="flexer">
+        <div>
+            <h3>Default</h3>
+            <my-component></my-component>
+        </div>
+        <div>
+            <h3>With name</h3>
+            
+            <my-component>
+                <p slot="name">Max</slot>
+                <p slot="title">Developer</slot>
+            </my-component>
+        </div>
+    </div>
 </body>
 
 
