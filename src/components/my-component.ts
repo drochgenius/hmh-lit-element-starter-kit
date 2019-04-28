@@ -13,7 +13,13 @@ template.innerHTML = `
  */
 export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
-    public name: string = 'World';
+    public defaultName: string = 'Boris';
+
+    @property({ type: String })
+    public defaultTitle: string = 'The Beach Bum';
+
+    @property({ type: String })
+    public defaultDescription: string = 'Likes to wallow in the warm, warm afternoon waves.';
 
     get styles(): TemplateResult { 
         return html`
@@ -37,12 +43,6 @@ export class MyComponent extends ComponentBase<string> {
         `;
     }
 
-    protected onNameSlotChanged(): void {
-        const slot = this.shadowRoot.querySelector('slot[name="name"]');
-        if(slot) {
-            console.log('hello', slot.textContent);
-        }
-    }
     protected render(): TemplateResult {
         return html`
             <style>
@@ -59,13 +59,14 @@ export class MyComponent extends ComponentBase<string> {
                 <div class="mdc-card__media mdc-card__media--16-9 demo-card__media"></div>
                 <div class="demo-card__primary">
                 <h2 class="demo-card__title mdc-typography mdc-typography--headline6">
-                    <slot name="name" @slotchange=${this.onNameSlotChanged}></slot>
+                    <slot name="name">${this.defaultName}</slot>
                 </h2>
                 <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">
-                    web developer
+                    <slot name="title">${this.defaultTitle}</slot>
                 </h3>
                 </div>
-                <div class="demo-card__secondary mdc-typography mdc-typography--body2">Dabbles in CSS, HTML, NodeJS, and consuming excessive amounts of sugar.
+                <div class="demo-card__secondary mdc-typography mdc-typography--body2">
+                    <slot name="description">${this.defaultDescription}</slot>
                 </div>
             </div>
             <div class="mdc-card__actions">

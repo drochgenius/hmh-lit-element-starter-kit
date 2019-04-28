@@ -21,15 +21,15 @@
 <body>
     <div class="flexer">
         <div>
-            <h3>Default</h3>
+            <h3>Default (no light DOM children)</h3>
             <my-component></my-component>
         </div>
         <div>
-            <h3>With name</h3>
-            
+            <h3>Has stuff in light DOM</h3>
             <my-component>
                 <p slot="name">Max</slot>
                 <p slot="title">Developer</slot>
+                <p slot="description">Dabbles in CSS, HTML, NodeJS, and consuming excessive amounts of sugar.</slot>
             </my-component>
         </div>
     </div>
