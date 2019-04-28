@@ -11,7 +11,7 @@ describe(`<my-component>`, (): void => {
 
         expect(el.shadowRoot).not.to.be.undefined;
         const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello World!');
+        expect(heading.innerText).to.equal('The Beach Bum');
     });
 
     it('should render with provided name attribute', async (): Promise<void> => {
@@ -20,8 +20,9 @@ describe(`<my-component>`, (): void => {
         await el.updateComplete;
 
         expect(el.shadowRoot).not.to.be.undefined;
-        const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello John!');
+        const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h2');
+        await el.updateComplete;
+        expect(heading.innerText).to.equal('John');
     });
 
     it('should update when name is changed', async (): Promise<void> => {
@@ -30,12 +31,12 @@ describe(`<my-component>`, (): void => {
         await el.updateComplete;
 
         expect(el.shadowRoot).not.to.be.undefined;
-        const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h3');
-        expect(heading.innerText).to.equal('Hello World!');
+        const heading: HTMLHeadingElement = el.shadowRoot.querySelector('h2');
+        expect(heading.innerText).to.equal('Boris');
 
-        el.name = 'Jane';
+        el.defaultName = 'Jane';
         await el.updateComplete;
-        expect(heading.innerText).to.equal('Hello Jane!');
+        expect(heading.innerText).to.equal('Jane');
     });
 });
 

@@ -15,10 +15,13 @@
             sourceMapSupport.install();
             mocha.setup('bdd');
         </script>
-            <!-- add your components under test here -->
-            <script type="module" src="/components/my-component.js"></script>
-            <!-- add you test files here -->
-            <script type="module" src="/unit/my-component.spec.js"></script>
+        <style>
+            @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+        </style>
+        <!-- add your components under test here -->
+        <script type="module" src="/components/my-component.js"></script>
+        <!-- add you test files here -->
+        <script type="module" src="/unit/my-component.spec.js"></script>
         <head>
     </head>
 
@@ -29,7 +32,7 @@
         </template>
 
         <template id="with-name">
-            <my-component name="John"></my-component>
+            <my-component defaultname="John"></my-component>
         </template>
 
         <div id="mocha"><!-- test results are displayed here --></div>
