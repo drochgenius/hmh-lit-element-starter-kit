@@ -1,14 +1,14 @@
 # HMH Lit-Element Starter Kit
 
-Starter repository for building Polymer/lit-element-based web components. 
+Starter repository for building and testing individual web components. 
 
 ## Technology Stack
 
-* Polymer [Lit-Element](https://github.com/Polymer/lit-element) as base class for building native custom elements.
-* [Lit-HTML](https://polymer.github.io/lit-html/) as templating library.
+* [Lit-Element](https://lit-element.polymer-project.org/) as base class for building native custom elements.
+* [Lit-HTML](https://lit-html.polymer-project.org/) as templating library.
 * [Typescript](http://www.typescriptlang.org/).
 * Extensible [development server](https://github.com/hmhco/mtl-nodejs-base-server) with support for bare ECMAScript imports.
-* Custom mocha-based unit test framework with code coverage: [lit-element-tester](https://github.com/drochgenius/lit-element-tester).
+* Custom mocha-based unit test framework with code coverage.
 
 ## Getting started
 
