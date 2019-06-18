@@ -10,6 +10,7 @@
         "start": "nodejs-base-server -Msc server-config.json",
         "map": "nodejs-base-server -Mc server-config.json",
         "build": "tsc -p src",
+        "lint": "prettier 'src/**/*.ts' --write; eslint 'src/**/*.ts' --fix",
         "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test-help": "lit-element-tester -V",
@@ -30,14 +31,45 @@
         "@types/chai": "latest",
         "@types/mocha": "latest",
         "@types/sinon": "latest",
+        "@typescript-eslint/eslint-plugin": "latest",
+        "@typescript-eslint/parser": "latest",
         "concurrently": "latest",
+        "eslint": "latest",
         "npm-watch": "latest",
         "polymer-cli": "latest",
+        "prettier": "latest",
         "sinon": "latest",
+        "source-map-support": "^0.5.12",
         "typescript": "latest",
         "typescript-styled-plugin": "latest"
     },
     "watch": {
         "_generateDocs": "src/**/*"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:@typescript-eslint/recommended"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "rules": {
+            "@typescript-eslint/no-explicit-any": [
+                0
+            ],
+            "@typescript-eslint/no-object-literal-type-assertion": [
+                0
+            ]
+        }
+    },
+    "prettier": {
+        "endOfLine": "lf",
+        "printWidth": 160,
+        "singleQuote": true,
+        "semi": true,
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "useTabs": false
     }
 }
