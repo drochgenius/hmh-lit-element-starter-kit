@@ -37,10 +37,11 @@ export class MyComponent extends ComponentBase<string> {
 
     private async quote(): Promise<string> {
         const headers: { [key: string]: string } = { 'Content-Type': 'application/json' };
-        const response: Response = await fetch('http://qod.rest:3000/api/qod.json', { headers });
+        const response: Response = await fetch('http://qod.res:3000/api/qod.json', { headers });
 
         if (response.status === 200) {
-            return response.json();
+            const result = await response.json();
+            return result.contents.quotes[0].quote;
         }
 
         return 'could not load the quote';
