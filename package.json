@@ -39,6 +39,7 @@
         "polymer-cli": "latest",
         "prettier": "latest",
         "sinon": "latest",
+        "source-map-support": "^0.5.12",
         "typescript": "latest",
         "typescript-styled-plugin": "latest"
     },
