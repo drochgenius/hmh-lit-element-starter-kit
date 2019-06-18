@@ -1,4 +1,4 @@
-import { ComponentBase, css, CSSResult, html, property, TemplateResult, until } from '@hmh/component-base';
+import { ComponentBase, css, CSSResult, html, property, TemplateResult, until } from '@hmh-cam/component-base';
 
 /**
  * `<my-component>`

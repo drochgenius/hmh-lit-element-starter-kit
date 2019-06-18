@@ -1,5 +1,5 @@
 {
-    "name": "@hmh/my-component",
+    "name": "@hmh-cam/my-component",
     "version": "0.0.1",
     "description": "My Component",
     "main": "dist/index.js",
@@ -13,18 +13,18 @@
         "prepubishOnly": "npm run build",
         "watch": "npm run build; concurrently --names 'build, doc ' -c 'bgBlue,bgMagenta' 'npm run build -- -w' 'npm-watch'",
         "test-help": "lit-element-tester -V",
-        "test": "lit-element-tester -p 3001 server-config.json",
+        "test": "component-tester -p 3001 server-config.json",
         "_generateDocs": "polymer analyze ./dist/components/*.js > ./dist/components/analysis.json"
     },
     "keywords": [],
     "author": "Dominique Rochefort <dominique.rochefort@hmhco.com>",
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@hmh/component-base": "latest"
+        "@hmh-cam/component-base": "latest"
     },
     "devDependencies": {
-        "@hmh/lit-element-tester": "latest",
-        "@hmh/nodejs-base-server": "latest",
+        "@hmh-cam/component-tester": "latest",
+        "@hmh-cam/nodejs-base-server": "latest",
         "@polymer/iron-component-page": "latest",
         "@polymer/iron-demo-helpers": "latest",
         "@types/chai": "latest",

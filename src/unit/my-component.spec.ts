@@ -1,4 +1,4 @@
-import { withSnippet } from '@hmh/lit-element-tester';
+import { useFixture } from '@hmh-cam/component-tester';
 import { SinonStub, stub } from 'sinon';
 import { MyComponent } from '../components/my-component';
 
@@ -17,7 +17,7 @@ describe(`<my-component>`, (): void => {
     });
 
     it('should render default state', async (): Promise<void> => {
-        withSnippet('default');
+        useFixture('default');
         const el: MyComponent = document.querySelector('my-component');
         await el.updateComplete;
 
@@ -36,7 +36,7 @@ describe(`<my-component>`, (): void => {
     });
 
     it('should render with provided name attribute', async (): Promise<void> => {
-        withSnippet('with-name');
+        useFixture('with-name');
         const el: MyComponent = document.querySelector('my-component');
         await el.updateComplete;
 
@@ -55,7 +55,7 @@ describe(`<my-component>`, (): void => {
     });
 
     it('should update when name is changed', async (): Promise<void> => {
-        withSnippet('default');
+        useFixture('default');
         const el: MyComponent = document.querySelector('my-component');
         await el.updateComplete;
 
