@@ -8,7 +8,7 @@ export class MyComponent extends ComponentBase<string> {
     @property({ type: String })
     public name: string = 'World';
 
-    static get styles(): CSSResult {
+    public static get styles(): CSSResult {
         return css`
             div {
                 padding: 1em;

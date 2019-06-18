@@ -9,7 +9,7 @@ const fakeQuote = 'There is nothing permanent except change.';
 describe(`<my-component>`, (): void => {
     let fetchStub: SinonStub;
 
-    beforeEach(() => {
+    beforeEach((): void => {
         const responseData = {};
         fetchStub = stub(window, 'fetch').returns(
             Promise.resolve(new Response(JSON.stringify(responseData), { headers: { 'Content-Type': 'application/json' } }))
@@ -27,8 +27,8 @@ describe(`<my-component>`, (): void => {
 
         const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
         expect(paragraph.innerText).to.deep.equal('loading...');
-        await new Promise((done: any) => {
-            setTimeout(() => {
+        await new Promise((done: any): void => {
+            setTimeout((): void => {
                 expect(paragraph.innerText).to.deep.equal(fakeQuote);
                 done();
             }, 0);
@@ -46,8 +46,8 @@ describe(`<my-component>`, (): void => {
 
         const paragraph: HTMLParagraphElement = el.shadowRoot.querySelector('p.quote');
         expect(paragraph.innerText).to.deep.equal('loading...');
-        await new Promise((done: any) => {
-            setTimeout(() => {
+        await new Promise((done: any): void => {
+            setTimeout((): void => {
                 expect(paragraph.innerText).to.deep.equal(fakeQuote);
                 done();
             }, 0);
@@ -68,7 +68,7 @@ describe(`<my-component>`, (): void => {
         expect(heading.innerText).to.equal(`Hello ${el.name}, here\'s the quote of the day:`);
     });
 
-    afterEach(() => {
+    afterEach((): void => {
         fetchStub.restore();
     });
 });
