@@ -1,5 +1,5 @@
 {
-    "name": "@hmh/my-component",
+    "name": "@hmh-cam/my-component",
     "version": "0.0.1",
     "description": "My Component",
     "main": "dist/index.js",
