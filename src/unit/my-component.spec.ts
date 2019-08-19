@@ -11,9 +11,7 @@ describe(`<my-component>`, (): void => {
 
     beforeEach((): void => {
         const responseData = {};
-        fetchStub = stub(window, 'fetch').returns(
-            Promise.resolve(new Response(JSON.stringify(responseData), { headers: { 'Content-Type': 'application/json' } }))
-        );
+        fetchStub = stub(window, 'fetch').resolves(new Response(JSON.stringify(responseData), { headers: { 'Content-Type': 'application/json' } }));
     });
 
     it('should render default state', async (): Promise<void> => {

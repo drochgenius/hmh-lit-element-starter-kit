@@ -5,8 +5,7 @@ import { ComponentBase, css, CSSResult, html, property, TemplateResult, until } 
  * @demo ./demo/index.html
  */
 export class MyComponent extends ComponentBase<string> {
-    @property({ type: String })
-    public name: string = 'World';
+    @property() name = 'World';
 
     public static get styles(): CSSResult {
         return css`
